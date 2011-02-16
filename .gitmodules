@@ -1,3 +1,6 @@
 [submodule "bundle/vim-pathogen"]
 	path = bundle/vim-pathogen
 	url = git://github.com/sejaeger/vim-pathogen.git
+[submodule "bundle/vim-zencoding"]
+	path = bundle/vim-zencoding
+	url = https://github.com/mattn/zencoding-vim.git
