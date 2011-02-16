@@ -7,3 +7,9 @@
 [submodule "bundle/vim-nerdtree"]
 	path = bundle/vim-nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "bundle/vim-nerdcommenter"]
+	path = bundle/vim-nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/vim-grep"]
+	path = bundle/vim-grep
+	url = https://github.com/vim-scripts/grep.vim.git
