@@ -1,8 +1,10 @@
-
-set nobackup
+et nobackup
+set noswapfile
+set hidden
 set encoding=utf-8
 set fileencoding=utf-8
 set fileformat=unix
+set number
 
 " .vim/bundle/plugin_nameを読み込むようにする
 call pathogen#runtime_append_all_bundles()
@@ -10,8 +12,17 @@ call pathogen#runtime_append_all_bundles()
 " .vim/bunle/plugin_nameのヘルプを読み込めるようにする
 call pathogen#helptags()
 
-" for python
+" for common
 syntax enable
+set tabstop=4 shiftwidth=4 softtabstop=0
+
+" for python
 autocmd FileType python setl autoindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
+" keybind
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
