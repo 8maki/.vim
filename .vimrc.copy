@@ -1,4 +1,5 @@
-et nobackup
+
+set nobackup
 set noswapfile
 set hidden
 set encoding=utf-8
