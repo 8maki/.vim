@@ -1,0 +1,28 @@
+export LANG=ja_JP.UTF-8
+
+# prompt environment
+autoload -Uz colors
+PROMPT="%/%%"
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=20000
+setopt hist_ignore_dups
+
+# alias commands
+alias ll='ls -la --color=always'
+
+# ZSH Directory Bookmarks
+alias m1='alias g1="cd `pwd`"'
+alias m2='alias g2="cd `pwd`"'
+alias m3='alias g3="cd `pwd`"'
+alias m4='alias g4="cd `pwd`"'
+alias m5='alias g5="cd `pwd`"'
+alias m6='alias g6="cd `pwd`"'
+alias m7='alias g7="cd `pwd`"'
+alias m8='alias g8="cd `pwd`"'
+alias m9='alias g9="cd `pwd`"'
+alias mdump='alias | grep -e "g[0-9]=" | grep -v "m[0-9]" | sed "s/^g/alias g/g" > ~/.bookmarks'
+alias lma='alias | grep -e "g[0-9]=" | grep -v "m[0-9]" | sed "s/^g/alias g/g"'
+touch ~/.bookmarks
+source ~/.bookmarks

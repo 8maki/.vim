@@ -1,0 +1,3 @@
+defencoding utf8
+escape ^z^z
+hardstatus alwayslastline "%H %`%-w%{=b bw}%n %t%{-}%+w"
