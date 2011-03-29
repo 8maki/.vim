@@ -17,6 +17,10 @@ call pathogen#helptags()
 syntax enable
 set tabstop=4 shiftwidth=4 softtabstop=0
 
+" for php
+au FileType php setlocal makeprg=php\ -l\ %
+au FileType php setlocal errorformat=%m\ in\ %f\ on\ line\ %l
+
 " for python
 autocmd FileType python setl autoindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
