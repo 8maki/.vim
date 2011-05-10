@@ -13,3 +13,6 @@
 [submodule "bundle/vim-grep"]
 	path = bundle/vim-grep
 	url = https://github.com/vim-scripts/grep.vim.git
+[submodule "bundle/vim-fugitive"]
+	path = bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
