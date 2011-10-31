@@ -1,1 +1,18 @@
-aaaa
+## Clone .vim repository
+```sh
+cd ~
+git clone git://github.com/8maki/.vim.git
+cd .vim
+git submodule init
+git submodule update
+```
+
+## Add vim plugin
+```sh
+git submodule add git://github.com/thinca/vim-quickrun.git .vim/bundle/vim-quickrun
+git submodule update
+```
+updateでSSL系のエラーがでたらこれで。
+```sh
+env GIT_SSL_NO_VERIFY=true git submodule update
+```
