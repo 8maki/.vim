@@ -1,4 +1,3 @@
-
 set nobackup
 set noswapfile
 set hidden
@@ -6,6 +5,9 @@ set encoding=utf-8
 set fileencoding=utf-8
 set fileformat=unix
 set number
+
+" statusline
+set statusline=%n\:%y%F\ \|%{(&fenc!=''?&fenc:&enc).'\|'.&ff.'\|'}%m%r%=<%l/%L:%p%%>
 
 " .vim/bundle/plugin_nameを読み込むようにする
 call pathogen#runtime_append_all_bundles()
@@ -26,8 +28,13 @@ autocmd FileType python setl autoindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
-" for js/css
+" for js
 au FileType javascript setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
+au FileType ejs setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
+
+" for html/css
+au FileType html setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
+au FileType htmldjango setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 au FileType css setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 " keybind
