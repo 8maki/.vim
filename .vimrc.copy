@@ -7,7 +7,8 @@ set fileformat=unix
 set number
 
 " statusline
-set statusline=%n\:%y%F\ \|%{(&fenc!=''?&fenc:&enc).'\|'.&ff.'\|'}%m%r%=<%l/%L:%p%%>
+" set statusline=%n\:%y%F\ \|%{(&fenc!=''?&fenc:&enc).'\|'.&ff.'\|'}%m%r%=<%l/%L:%p%%>
+set statusline=%F%m%r%h%w\[%Y]\ \|%{(&fenc!=''?&fenc:&enc).'\|'.&ff.'\|'}(%04l,%04v)[%p%%]\ [LEN=%L]
 
 " .vim/bundle/plugin_nameを読み込むようにする
 call pathogen#runtime_append_all_bundles()
@@ -15,16 +16,21 @@ call pathogen#runtime_append_all_bundles()
 " .vim/bunle/plugin_nameのヘルプを読み込めるようにする
 call pathogen#helptags()
 
+filetype plugin indent on
+
 " for common
-syntax enable
+syntax on
 set tabstop=4 shiftwidth=4 softtabstop=0
+" solarized options 
+set background=dark
+colorscheme darkblue
 
 " for php
 au FileType php setlocal makeprg=php\ -l\ %
 au FileType php setlocal errorformat=%m\ in\ %f\ on\ line\ %l
 
 " for python
-autocmd FileType python setl autoindent
+" autocmd FileType python setl autoindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
@@ -32,13 +38,30 @@ autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
 au FileType javascript setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 au FileType ejs setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
+" for coffee
+au BufRead,BufNewFile main.coffee 			set filetype=coffee
+au FileType coffee setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
+
 " for html/css
 au FileType html setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 au FileType htmldjango setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 au FileType css setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
+
+" autocmd BufWinLeave *.* mkview
+" autocmd BufWinEnter *.* silent loadview 
+set foldmethod=marker
+
+" vim indent guides
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
 
 " keybind
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-@> :CoffeeCompile vert<CR>
+let coffee_lint_options = '-f coffeelint.json'
+nnoremap <C-p> :CoffeeLint \| cwin<CR>
