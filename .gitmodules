@@ -25,3 +25,12 @@
 [submodule "bundle/vim-coffee-script"]
 	path = bundle/vim-coffee-script
 	url = git@github.com:kchmck/vim-coffee-script.git
+[submodule "bundle/vim-fakeclip"]
+	path = bundle/vim-fakeclip
+	url = git://github.com/kana/vim-fakeclip.git
+[submodule "syntastic"]
+	path = syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
