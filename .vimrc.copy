@@ -33,6 +33,11 @@ au FileType php setlocal errorformat=%m\ in\ %f\ on\ line\ %l
 " autocmd FileType python setl autoindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
+" syntastic
+let g:syntastic_check_on_open=1    
+let g:syntastic_python_checkers=['flake8', 'pyflakes']
+" let g:syntastic_python_checker_args='--ignore=E501'
+let g:syntastic_python_flake8_args = '--max-line-length=120'
 
 " for js
 au FileType javascript setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
@@ -46,6 +51,14 @@ au FileType coffee setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 au FileType html setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 au FileType htmldjango setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 au FileType css setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
+au FileType less setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
+
+" for xml
+au FileType xml setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
+au FileType json setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
+
+" vim_goshrepl                                                                                                                                                              
+vmap <CR> <Plug>(gosh_repl_send_block)
 
 " autocmd BufWinLeave *.* mkview
 " autocmd BufWinEnter *.* silent loadview 
@@ -65,3 +78,6 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-@> :CoffeeCompile vert<CR>
 let coffee_lint_options = '-f coffeelint.json'
 nnoremap <C-p> :CoffeeLint \| cwin<CR>
+
+" clipboard
+set clipboard=unnamed

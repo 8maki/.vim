@@ -34,3 +34,9 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/vim_goshrepl"]
+	path = bundle/vim_goshrepl
+	url = git://github.com/aharisu/vim_goshrepl.git
+[submodule "bundle/vimproc"]
+	path = bundle/vimproc
+	url = git@github.com:Shougo/vimproc.vim.git
